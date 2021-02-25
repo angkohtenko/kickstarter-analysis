@@ -22,7 +22,7 @@ First of all, I realized that the goal for 2/3 of campaigns is less than $5000. 
 
 ![Plays Outcomes Based on Goals](https://github.com/angkohtenko/kickstarter-analysis/blob/main/Resources/Outcomes_vs_Goals.png)
 
-We see that it’s easy to raised less than $1000. You will likely do it with 80% probability. It is quite easy to get $4999. 73% of campaigns has done that. 
+We see that it’s easy to raise less than $1000. You will likely do it with 80% probability. It is quite easy to get $4999. 73% of campaigns has done that. 
 
 Everything above $5000 are disputable. The red line, which stands for failed campaigns, is higher then green here. We can be misleading by successful campaigns in the range between $35000 and $44999, but there are too few campaigns to make any positive conclusions (6 successful vs 3 failed). 
 
@@ -30,14 +30,14 @@ Everything above $5000 are disputable. The red line, which stands for failed cam
 ### Challenges and Difficulties Encountered
 During the analysis I met two main challenges: unix timestamp and merged parent category and subcategory.
 
-All dates in the dataset were written in the unix timestamp: 1449766261, so there were number of seconds from Jan.1 1970 instead of normal date. To solve the problem I created new columns and calculated dates with formula =(((A1/60)/60)/24)+DATE(1970,1,1) . It’s important to set a date format to these columns. To extract year from the date became a piece of cake.
+All dates in the dataset were written in the unix timestamp: 1449766261, so there were numbers of seconds from Jan.1 1970 instead of normal date. To solve the problem I created new columns and calculated dates with formula =(((A1/60)/60)/24)+DATE(1970,1,1) . It’s important to set a date format to calculated columns. To extract year from the date has become a piece of cake.
 
 Category and Subcategory were merged in one column in the original dataset, so it was hard to filter only Theater category. I should select all subcategories manually to do that.  I used Text to columns feature in Excel. I set the sign / as a delimiter to divide text into two columns: parent category and subcategory. Now, I could easily filter dataset either by parent category or subcategory.
 
 ## Results
 
 - The best months to start a campaign are May and June.
-- The worst months for launch date is December.
+- The worst month for launch date is December.
 - The funding goal should be less than $5000.
 - It's important to keep in mind that used Kickstarter dataset contains data for 2009-2017 years only. Some trends might have changed since 2017.
 - It’s definitely useful to build a chart with quantity of campaigns in every goal range. As I mentioned, most of the campaigns have a funding goal less than $5000.
